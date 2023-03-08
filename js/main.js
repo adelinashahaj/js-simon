@@ -24,12 +24,16 @@ console.log(numbers);
 //stampo i numeri casuali in pagina
 numCont.innerHTML= numbers;
 
-  setTimeout(funzioneDaRichiamare, 30000);
+setTimeout(resetDom, 5000);
+function resetDom(){
+     // nascondo i numeri generati dal pc
+    numCont.classList.add('nascondi');
+}
+
+setTimeout(funzioneDaRichiamare, 5500);
 
 function funzioneDaRichiamare(){
     let userList=[];
-    // nascondo i numeri generati dal pc
-    numCont.classList.add('nascondi');
    
      for (let i = 0; i < 5; i++){
         
@@ -46,6 +50,6 @@ function funzioneDaRichiamare(){
      if (userList == 0){
         numRes.innerHTML = `<h2>Non hai indovinato nessun numero!</h2>`;
      }else{
-        numRes.innerHTML=userList;
+        numRes.innerHTML="Hai indovinato:" + userList;
      }
 }
